@@ -34,13 +34,13 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
-    [install.init_main_permission]
-    type = "group"
-    default = "visitors"
-
     [install.path]
     type = "path"
     default = "/docsify"
+    
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
 
 [resources]
 
