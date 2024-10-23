@@ -18,13 +18,6 @@ ynh_script_progression "Setting up source files..."
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
-#ynh_script_progression "Adding $app's configuration files..."
-
-#ynh_config_add --template="settings.example.json" --destination="$install_dir/settings.json"
-
-#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
@@ -43,7 +36,7 @@ ynh_script_progression "Installing the app..."
 pushd "$install_dir"
  	ynh_hide_warnings ynh_exec_as_app npm install
  	ynh_hide_warnings ynh_exec_as_app npm run build
- 	./docsify init __DATA_DIR__
+ 	./bin/docsify init __DATA_DIR__
 popd
 
 #=================================================
@@ -51,7 +44,7 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd" --wait_until="Server up and running"
+ynh_systemctl --service="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
