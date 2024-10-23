@@ -44,7 +44,7 @@ yunohost service add "$app" --description="Documentation site generator" --log="
 ynh_script_progression "Installing the app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ynh_exec_as_app npm install docsify-cli -g
+ 	ynh_hide_warnings npm install docsify-cli -g
  	#./docsify init __DATA_DIR__
 popd
 
