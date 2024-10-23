@@ -36,6 +36,9 @@ ynh_script_progression "Installing the app..."
 pushd "$install_dir"
  	ynh_hide_warnings ynh_exec_as_app npm install
  	ynh_hide_warnings ynh_exec_as_app npm run build
+
+	mkdir -p "$install_dir/mysite"
+	$install_dir/bin/docsify init "$install_dir/mysite" --local false --theme vue --plugins false
 popd
 
 chown -R "$app:www-data" "$install_dir"
