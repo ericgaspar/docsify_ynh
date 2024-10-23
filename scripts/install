@@ -28,13 +28,8 @@ ynh_config_add_systemd
 
 yunohost service add "$app" --description="Documentation site generator" --log="/var/log/$app/$app.log"
 
-#ynh_config_add --template="index.html" --destination="$data_dir/index.html"
-
-#chmod 600 "$data_dir/index.html"
-#chown "$app:$app" "$data_dir/index.html"
-
 #=================================================
-# INSTALL DODOC
+# INSTALL DOCSIFY
 #=================================================
 ynh_script_progression "Installing the app..."
 
@@ -42,8 +37,6 @@ pushd "$install_dir"
  	ynh_hide_warnings ynh_exec_as_app npm install
  	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
-
-#$install_dir/bin/docsify init $install_dir/docs
 
 chown -R "$app:www-data" "$install_dir"
 
