@@ -37,7 +37,7 @@ ram.runtime = "50M"
     [install.path]
     type = "path"
     default = "/docsify"
-    
+
     [install.init_main_permission]
     type = "group"
     default = "visitors"
@@ -55,8 +55,6 @@ ram.runtime = "50M"
     [resources.system_user]
 
     [resources.install_dir]
-
-    [resources.data_dir]
 
     [resources.permissions]
     main.url = "/"
