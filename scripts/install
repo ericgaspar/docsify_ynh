@@ -43,7 +43,7 @@ pushd "$install_dir"
  	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
 
-mkdir -p $install_dir/docs
+#mkdir -p $install_dir/docs
 $install_dir/bin/docsify init $install_dir/docs #__DATA_DIR__
 
 chown -R "$app:www-data" "$install_dir"
