@@ -9,7 +9,7 @@ Group=__APP__
 Environment="PATH=__PATH_WITH_NODEJS__"
 Environment="NODE_ENV=production"
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__NODEJS_DIR__/docsify serve __DATA_DIR__ --open false --port __PORT__
+ExecStart=__NODEJS_DIR__/bin/docsify serve __DATA_DIR__ --open false --port __PORT__
 Restart=on-failure
 
 [Install]
